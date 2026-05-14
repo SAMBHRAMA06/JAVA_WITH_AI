@@ -1,0 +1,73 @@
+package com.abstraction;
+
+abstract class Shape {
+	public String color;
+
+	public void displayColor() {// non abstract method/concrete method
+		System.out.println("Color: " + color);
+	}
+
+	public abstract double calculateArea();// abstract method/non concrete method
+
+	public abstract void draw();
+
+}
+
+class Circle extends Shape {
+	double radius;
+
+	public Circle(double radius) {
+		super();
+		this.radius = radius;
+	}
+
+	@Override
+	public double calculateArea() {
+		// TODO Auto-generated method stub
+		return 3.14 * radius * radius;
+	}
+
+	@Override
+	public void draw() {
+		System.out.println("Drawing the cirlce of radius: " + radius);
+
+	}
+
+}
+
+class Rectangle extends Shape {
+	double length;
+	double width;
+
+	public Rectangle(double length, double width) {
+		super();
+		this.length = length;
+		this.width = width;
+	}
+
+	@Override
+	public double calculateArea() {
+		// TODO Auto-generated method stub
+		return length * width;
+	}
+
+	@Override
+	public void draw() {
+		System.out.println("Drawing the rectangel of length :" + length + "width: " + width);
+
+	}
+
+}
+
+public class AbstractClass {
+	public static void main(String[] args) {
+		Circle c = new Circle(23);
+		System.out.println(c.calculateArea());
+		c.draw();
+		Rectangle r = new Rectangle(20, 30);
+		System.out.println(r.calculateArea());
+		r.draw();
+
+	}
+
+}

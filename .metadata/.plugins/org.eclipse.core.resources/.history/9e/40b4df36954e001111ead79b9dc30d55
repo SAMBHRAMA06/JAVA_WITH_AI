@@ -1,0 +1,11 @@
+package com.aceessmodifiers;
+
+
+public class ProtectedAcessModifier2 {
+	public static void main(String[] args) {
+		Person1 p = new Person1();
+		p.salary=1000;
+		System.out.println("Salary: "+p.salary);
+	}
+
+}

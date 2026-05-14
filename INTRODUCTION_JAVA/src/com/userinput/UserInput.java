@@ -1,0 +1,31 @@
+package com.userinput;
+
+import java.util.Scanner;
+
+public class UserInput {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a number: ");
+		int marks = sc.nextInt();
+		System.out.println("Your marks is: " + marks);
+
+		System.out.println("Enter your age: ");
+		byte age = sc.nextByte();
+		System.out.println("Your age is: " + age);
+
+		System.out.println("Enter var2: ");
+		short var2 = sc.nextShort();
+		System.out.println("var2 is: " + var2);
+
+		System.out.println("Enter your salary: ");
+		float sal = sc.nextFloat();
+		System.out.println("Your salary is: " + sal);
+
+		System.out.println("Are you a student? (true/false): ");
+		boolean isValid = sc.nextBoolean();
+		System.out.println("Are you a student: " + isValid);
+
+		sc.close();
+	}
+}

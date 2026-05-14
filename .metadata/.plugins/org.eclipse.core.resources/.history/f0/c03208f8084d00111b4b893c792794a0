@@ -1,0 +1,15 @@
+package com.datatypes;
+
+public class DataType1 {
+	public static void main(String[] args) {
+		byte age = 121;
+		System.out.println("Your age is: "+age);
+		
+		float marks = 121.5f;
+		System.out.println("Your marks is: "+marks);
+		
+		char gender = 'M';
+		System.out.println("Gender: "+gender);
+		
+	}
+}

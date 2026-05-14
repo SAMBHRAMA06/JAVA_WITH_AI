@@ -1,0 +1,50 @@
+package com.encapsulation;
+
+class Student1 {
+	private String name;
+	private int age;
+	private String usn;
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + ", usn=" + usn + "]";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getUsn() {
+		return usn;
+	}
+
+	public void setUsn(String usn) {
+		this.usn = usn;
+	}
+
+}
+
+public class GoodStudent {
+	public static void main(String[] args) {
+		// object
+		Student1 st1 = new Student1();
+		st1.setName("Sam");
+		st1.setAge(19);
+		st1.setUsn("1CE24AI071");
+		System.out.println(st1.getName());
+		System.out.println(st1);
+
+	}
+}

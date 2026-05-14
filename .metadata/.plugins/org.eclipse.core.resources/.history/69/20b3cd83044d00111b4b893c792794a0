@@ -1,0 +1,5 @@
+package com.second_package;
+
+public class Hello {
+
+}

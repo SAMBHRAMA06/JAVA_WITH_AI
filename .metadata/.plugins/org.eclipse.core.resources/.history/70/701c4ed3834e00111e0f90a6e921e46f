@@ -1,0 +1,25 @@
+package com.encapsulation;
+
+class Student {
+	public String name;
+	public int age;
+	public String usn;
+
+	@Override
+	public String toString() {
+		return "BadStudent [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+}
+
+public class BadStudent {
+	public static void main(String[] args) {
+		// object
+		Student st1 = new Student();
+		st1.name = "Sam";
+		st1.age = -19;
+		st1.usn = "gfsehehte";
+		System.out.println(st1);
+
+	}
+}

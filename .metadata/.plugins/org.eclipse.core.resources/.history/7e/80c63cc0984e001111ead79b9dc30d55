@@ -1,0 +1,57 @@
+package com.games;
+
+public class RockPaperScissors {
+	// Improved ASCII Art Display Method
+	public static void showChoice(int choice) {
+		switch (choice) {
+
+		case 1: // ROCK
+			System.out.println("╔════════════════════════════════════╗");
+			System.out.println("║              ROCK 🪨              ║");
+			System.out.println("╚════════════════════════════════════╝");
+			System.out.println("            _______                 ");
+			System.out.println("        ---'   ____)                ");
+			System.out.println("              (_____)               ");
+			System.out.println("              (_____)               ");
+			System.out.println("              (____)                ");
+			System.out.println("        ---.__(___)                 ");
+			System.out.println("                                    ");
+			System.out.println("        🪨 ROCK CRUSHES SCISSORS!    ");
+			break;
+
+		case 2: // PAPER
+			System.out.println("╔════════════════════════════════════╗");
+			System.out.println("║             PAPER 📄              ║");
+			System.out.println("╚════════════════════════════════════╝");
+			System.out.println("             _______                ");
+			System.out.println("         ---'   ____)____           ");
+			System.out.println("                   ______)          ");
+			System.out.println("                  _______)          ");
+			System.out.println("                 _______)           ");
+			System.out.println("         ---.__________)            ");
+			System.out.println("                                    ");
+			System.out.println("        📄 PAPER COVERS ROCK!       ");
+			break;
+
+		case 3: // SCISSORS
+			System.out.println("╔════════════════════════════════════╗");
+			System.out.println("║           SCISSORS ✂️             ║");
+			System.out.println("╚════════════════════════════════════╝");
+			System.out.println("             _______                ");
+			System.out.println("         ---'   ____)____           ");
+			System.out.println("                   ______)          ");
+			System.out.println("                __________)         ");
+			System.out.println("               (____)               ");
+			System.out.println("         ---.__(___)                ");
+			System.out.println("                                    ");
+			System.out.println("       ✂️ SCISSORS CUT PAPER!       ");
+			break;
+		}
+
+		System.out.println("\n══════════════════════════════════════\n");
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

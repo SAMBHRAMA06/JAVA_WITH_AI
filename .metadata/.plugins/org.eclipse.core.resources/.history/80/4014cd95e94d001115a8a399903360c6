@@ -1,0 +1,26 @@
+package com.classobject;
+
+class Student {
+	String name;
+	int roll;
+	boolean isFemale;
+
+	public void isWalking() {
+		System.out.println("student is walking");
+
+	}
+}
+
+public class ClassAndObject1 {
+	public static void main(String[] args) {
+		Student st1 = new Student();
+		st1.name = "Sam";
+		st1.roll = 71;
+		st1.isFemale = true;
+		System.out.println(st1.name);
+		System.out.println(st1.roll);
+		System.out.println(st1.isFemale);
+		st1.isWalking();
+	}
+
+}

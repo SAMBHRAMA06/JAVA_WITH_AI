@@ -1,0 +1,36 @@
+package com.inheritance;
+
+class Vehicle {
+	String name;
+	String brand;
+
+	public Vehicle(String name, String brand) {
+		super();
+		this.name;
+		this.brand;
+	}
+
+	public void display() {
+		System.out.println("Name: " + name);
+		System.out.println("Brand: " + brand);
+
+	}
+}
+
+class Car extends Vehicle {
+	int noWheels;
+
+	public Car(String name, String brand,int noWheels) {
+		super(name,brand);
+		this.noWheels = noWheels;
+	}
+
+	public void display() {
+		super.display();
+		System.out.println("NoWheels: " + noWheels);
+	}
+}
+
+public class Inheritance1 {
+
+}

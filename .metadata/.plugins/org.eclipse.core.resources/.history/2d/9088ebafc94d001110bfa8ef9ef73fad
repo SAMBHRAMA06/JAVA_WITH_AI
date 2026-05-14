@@ -1,0 +1,16 @@
+package com.conditional_statements;
+
+import java.util.Scanner;
+
+public class SwitchCase2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter value: ");
+		int userInput = sc.nextInt();
+		switch (userInput) {
+		case 1, 2, 3, 4, 5 -> System.out.println("WeekDays");
+		case 6, 7 -> System.out.println("Weekends");
+		default -> System.out.println("Invalid ,please try again");
+		}
+	}
+}

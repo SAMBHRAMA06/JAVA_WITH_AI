@@ -1,0 +1,14 @@
+package com.polymorphism;
+
+class Calculation{
+	public int add(int a, int b) {
+		return a+b;
+	}
+}
+public class MethodOverloading {
+	public static void main(String[] args) {
+		Calculation c = new Calculation();
+		c.add(10, 20);
+	}
+
+}

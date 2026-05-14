@@ -1,0 +1,14 @@
+package com.datatypes;
+
+import java.util.Arrays;
+
+public class DataType3 {
+	public static void main(String[] args) {
+		int []arr= {1,2,3,4,5};
+		
+		//first index value
+		System.out.println("first: "+arr[0]);
+		//complete array
+		System.out.println(Arrays.toString(arr));
+	}
+}

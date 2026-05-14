@@ -1,0 +1,15 @@
+package com.userinput;
+
+import java.util.Scanner;
+
+public class UserInput {
+	public static void main(String[] args) {
+		// to use scanner we need to create a object of scanner class.
+		// classname objname = new classname();
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter a number: ");
+		int marks = sc.nextInt();
+		System.out.println("ypur marks is: "+marks);
+	}
+
+}

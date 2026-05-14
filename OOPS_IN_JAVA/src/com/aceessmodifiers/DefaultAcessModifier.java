@@ -1,0 +1,10 @@
+package com.aceessmodifiers;
+
+public class DefaultAcessModifier {
+	public static void main(String[] args) {
+		Person p = new Person();
+		p.salary = 1000;
+		System.out.println("Salary: " + p.salary);
+	}
+
+}

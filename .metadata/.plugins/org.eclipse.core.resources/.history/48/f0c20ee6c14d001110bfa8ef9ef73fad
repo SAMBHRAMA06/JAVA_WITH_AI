@@ -1,0 +1,24 @@
+package com.datatypes;
+
+public class DataType1 {
+	public static void main(String[] args) {
+		byte age = 121;
+		System.out.println("Your age is: "+age);
+		
+		short var2 = 135;
+		System.out.println("var2 is: "+var2);
+		
+		int var3 = 120;
+		System.out.println("var3 is: "+var3);
+		
+		float marks = 121.5f;
+		System.out.println("Your marks is: "+marks);
+		
+		char gender = 'F';
+		System.out.println("Gender: "+gender);
+		
+		boolean isValid = true;
+		System.out.println("are you a student: "+isValid);
+		
+	}
+}
