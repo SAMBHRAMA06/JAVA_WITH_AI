@@ -12,37 +12,35 @@ import java.io.PrintWriter;
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.sendRedirect("login.html");
+	}
 
-        response.sendRedirect("login.html");
-    }
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+		String userName = request.getParameter("username");
+		String password = request.getParameter("password");
+		response.setContentType("text/html");
 
-        String userName = request.getParameter("username");
-        String password = request.getParameter("password");
+		PrintWriter pw = response.getWriter();
 
-        response.setContentType("text/html");
+		if ("admin".equals(userName) && "1234".equals(password)) {
 
-        PrintWriter pw = response.getWriter();
+			pw.println("<html><body>");
+			pw.println("<h2>Welcome, " + userName + "!</h2>");
+			pw.println("</body></html>");
 
-        if ("admin".equals(userName) && "1234".equals(password)) {
+		} else {
 
-            pw.println("<html><body>");
-            pw.println("<h2>Welcome, " + userName + "!</h2>");
-            pw.println("</body></html>");
-
-        } else {
-
-            pw.println("<html><body>");
-            pw.println("<h2>Invalid Credentials!</h2>");
-            pw.println("</body></html>");
-        }
-    }
+			pw.println("<html><body>");
+			pw.println("<h2>Invalid Credentials!</h2>");
+			pw.println("</body></html>");
+		}
+	}
 }
