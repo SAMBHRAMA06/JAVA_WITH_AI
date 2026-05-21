@@ -1,8 +1,0 @@
-package com.classobject;
-
-public class ClassAndObject {
-	public static void main(String[] args) {
-		
-	}
-
-}

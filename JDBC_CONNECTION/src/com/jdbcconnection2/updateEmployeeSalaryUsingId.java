@@ -32,7 +32,7 @@ public class updateEmployeeSalaryUsingId {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		} finally {
 			sc.close(); // close scanner to avoid resource leak
 		}
