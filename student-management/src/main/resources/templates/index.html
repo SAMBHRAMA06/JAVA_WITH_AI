@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}">
+
+<div layout:fragment="content">
+
+    <!-- Welcome Header -->
+    <div class="bg-primary text-white rounded-4 p-4 mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-mortarboard-fill me-2"></i>Student Dashboard
+            </h2>
+            <p class="mb-0 opacity-75">Welcome back! Here's a quick overview of your system.</p>
+        </div>
+        <a th:href="@{/students/add}" class="btn btn-light fw-semibold text-primary">
+            <i class="bi bi-plus-circle me-2"></i>Add New Student
+        </a>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="row g-3 mb-4">
+
+        <!-- Total Students -->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex align-items-center gap-3">
+                    <div class="bg-primary bg-opacity-10 rounded-3 p-3">
+                        <i class="bi bi-people-fill fs-3 text-primary"></i>
+                    </div>
+                    <div>
+                        <div class="fs-2 fw-bold text-dark" th:text="${totalStudents}">0</div>
+                        <div class="text-muted small">Total Students</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder stat 2 -->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex align-items-center gap-3">
+                    <div class="bg-success bg-opacity-10 rounded-3 p-3">
+                        <i class="bi bi-patch-check-fill fs-3 text-success"></i>
+                    </div>
+                    <div>
+                        <div class="fs-2 fw-bold text-dark">—</div>
+                        <div class="text-muted small">Active Courses</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder stat 3 -->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex align-items-center gap-3">
+                    <div class="bg-warning bg-opacity-10 rounded-3 p-3">
+                        <i class="bi bi-calendar2-week-fill fs-3 text-warning"></i>
+                    </div>
+                    <div>
+                        <div class="fs-2 fw-bold text-dark">—</div>
+                        <div class="text-muted small">This Month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder stat 4 -->
+        <div class="col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body d-flex align-items-center gap-3">
+                    <div class="bg-info bg-opacity-10 rounded-3 p-3">
+                        <i class="bi bi-envelope-fill fs-3 text-info"></i>
+                    </div>
+                    <div>
+                        <div class="fs-2 fw-bold text-dark">—</div>
+                        <div class="text-muted small">Emails Sent</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-lightning-charge-fill text-warning me-2"></i>Quick Actions</h5>
+                    <div class="d-flex flex-column gap-2">
+                        <a th:href="@{/students/add}" class="btn btn-primary">
+                            <i class="bi bi-person-plus-fill me-2"></i>Register New Student
+                        </a>
+                        <a th:href="@{/students}" class="btn btn-outline-primary">
+                            <i class="bi bi-people me-2"></i>View All Students
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-info-circle-fill text-info me-2"></i>System Info</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="text-muted">Total Registered</span>
+                            <strong th:text="${totalStudents}">0</strong>
+                        </li>
+                        <li class="d-flex justify-content-between py-2 border-bottom">
+                            <span class="text-muted">System</span>
+                            <strong>Student Management System</strong>
+                        </li>
+                        <li class="d-flex justify-content-between py-2">
+                            <span class="text-muted">Status</span>
+                            <span class="badge bg-success">Online</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</html>

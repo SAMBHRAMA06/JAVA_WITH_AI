@@ -1,0 +1,91 @@
+/* File: src/main/resources/static/css/custom.css */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8 0%, #e8eaf6 100%);
+    min-height: 100vh;
+}
+
+/* Navbar gradient */
+#mainNav {
+    background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%) !important;
+    padding: 12px 0;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+}
+
+/* Avatar circle for student initials */
+.avatar-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1565C0, #7B1FA2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+/* Fade-in animation for table rows */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Stagger animation for table rows */
+tr.fade-in:nth-child(1) { animation-delay: 0.05s; }
+tr.fade-in:nth-child(2) { animation-delay: 0.10s; }
+tr.fade-in:nth-child(3) { animation-delay: 0.15s; }
+tr.fade-in:nth-child(4) { animation-delay: 0.20s; }
+tr.fade-in:nth-child(5) { animation-delay: 0.25s; }
+
+/* Custom button styles */
+.btn-primary {
+    background: linear-gradient(135deg, #1565C0, #0D47A1);
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(21,101,192,0.4);
+}
+
+/* Footer */
+#mainFooter {
+    background: linear-gradient(135deg, #1565C0, #0D47A1);
+    color: white;
+}
+
+/* Table header */
+.table-primary th {
+    background: linear-gradient(135deg, #1565C0, #1976D2) !important;
+    color: white !important;
+    font-weight: 600;
+    border: none;
+}
+
+/* Pulse animation for success badge */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+.pulse { animation: pulse 2s infinite; }
+

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}">
+
+<div layout:fragment="content">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a th:href="@{/}" class="text-decoration-none">Home</a></li>
+            <li class="breadcrumb-item"><a th:href="@{/students}" class="text-decoration-none">Students</a></li>
+            <li class="breadcrumb-item active">Add Student</li>
+        </ol>
+    </nav>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <!-- Page Header -->
+            <div class="bg-primary text-white rounded-4 p-4 mb-4">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-white bg-opacity-25 rounded-3 p-3">
+                        <i class="bi bi-person-plus-fill fs-2"></i>
+                    </div>
+                    <div>
+                        <h3 class="fw-bold mb-1">Add New Student</h3>
+                        <p class="mb-0 opacity-75">Fill in the details below to register a new student</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div th:if="${errorMessage}" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                <span th:text="${errorMessage}"></span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+
+            <!-- Form Card -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+
+                    <form th:action="@{/students/add}" th:object="${student}" method="post" novalidate>
+
+                        <div class="row g-3">
+
+                            <!-- First Name -->
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label fw-semibold">
+                                    <i class="bi bi-person me-1 text-primary"></i>First Name <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="firstName" th:field="*{firstName}"
+                                       th:classappend="${#fields.hasErrors('firstName')} ? 'is-invalid'"
+                                       class="form-control" placeholder="e.g. Rahul">
+                                <div th:if="${#fields.hasErrors('firstName')}" class="invalid-feedback"
+                                     th:errors="*{firstName}">Error</div>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label fw-semibold">
+                                    <i class="bi bi-person me-1 text-primary"></i>Last Name <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" id="lastName" th:field="*{lastName}"
+                                       th:classappend="${#fields.hasErrors('lastName')} ? 'is-invalid'"
+                                       class="form-control" placeholder="e.g. Sharma">
+                                <div th:if="${#fields.hasErrors('lastName')}" class="invalid-feedback"
+                                     th:errors="*{lastName}">Error</div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-semibold">
+                                    <i class="bi bi-envelope me-1 text-primary"></i>Email Address <span class="text-danger">*</span>
+                                </label>
+                                <input type="email" id="email" th:field="*{email}"
+                                       th:classappend="${#fields.hasErrors('email')} ? 'is-invalid'"
+                                       class="form-control" placeholder="rahul@example.com">
+                                <div th:if="${#fields.hasErrors('email')}" class="invalid-feedback"
+                                     th:errors="*{email}">Error</div>
+                                <div class="form-text">
+                                    <i class="bi bi-info-circle me-1"></i>A welcome email will be sent here
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label fw-semibold">
+                                    <i class="bi bi-telephone me-1 text-primary"></i>Phone Number
+                                </label>
+                                <input type="tel" id="phone" th:field="*{phone}"
+                                       th:classappend="${#fields.hasErrors('phone')} ? 'is-invalid'"
+                                       class="form-control" placeholder="+91 9999999999">
+                                <div th:if="${#fields.hasErrors('phone')}" class="invalid-feedback"
+                                     th:errors="*{phone}">Error</div>
+                            </div>
+
+                            <!-- Course -->
+                            <div class="col-md-6">
+                                <label for="course" class="form-label fw-semibold">
+                                    <i class="bi bi-book me-1 text-primary"></i>Course <span class="text-danger">*</span>
+                                </label>
+                                <select id="course" th:field="*{course}"
+                                        th:classappend="${#fields.hasErrors('course')} ? 'is-invalid'"
+                                        class="form-select">
+                                    <option value="">-- Select Course --</option>
+                                    <option value="B.Tech Computer Science">B.Tech Computer Science</option>
+                                    <option value="B.Tech Information Technology">B.Tech Information Technology</option>
+                                    <option value="B.Sc Computer Science">B.Sc Computer Science</option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="MBA">MBA</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="B.Com">B.Com</option>
+                                </select>
+                                <div th:if="${#fields.hasErrors('course')}" class="invalid-feedback"
+                                     th:errors="*{course}">Error</div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="col-12">
+                                <label for="address" class="form-label fw-semibold">
+                                    <i class="bi bi-geo-alt me-1 text-primary"></i>Address
+                                </label>
+                                <textarea id="address" th:field="*{address}"
+                                          class="form-control" rows="3"
+                                          placeholder="Enter full address"></textarea>
+                            </div>
+
+                        </div>
+                        <!-- end row -->
+
+                        <!-- Buttons -->
+                        <div class="d-flex gap-2 mt-4 pt-3 border-top">
+                            <button type="submit" class="btn btn-primary px-4 fw-semibold">
+                                <i class="bi bi-check-circle me-2"></i>Add Student
+                            </button>
+                            <a th:href="@{/students}" class="btn btn-outline-secondary px-4">
+                                <i class="bi bi-x-circle me-2"></i>Cancel
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <!-- end card -->
+
+        </div>
+    </div>
+
+</div>
+</html>
